@@ -4,7 +4,11 @@ import utilities.math.MathUtilities;
 
 /**
  * A 2D Point (x, y).
+ * 
+ * @author taterosen
+ * @date 08/31/2022
  */
+
 public class PointNode
 {
 	protected static final String ANONYMOUS = "__UNNAMED";
@@ -25,7 +29,7 @@ public class PointNode
 	 */
 	public PointNode(double x, double y)
 	{
-		// TODO
+		this(ANONYMOUS,x,y);
 	}
 
 	/**
@@ -36,7 +40,9 @@ public class PointNode
 	 */
 	public PointNode(String name, double x, double y)
 	{
-		// TODO
+		this._name = name;
+		this._x = x;
+		this._y = y;
 	}
 
 	@Override
@@ -48,12 +54,14 @@ public class PointNode
 	@Override
 	public boolean equals(Object obj)
 	{
-		// TODO
+		if (obj == null) return false;
+		if (this == obj || this.hashCode() == obj.hashCode()) return true;
+		return false;
 	}
 
     @Override
     public String toString()
     {
-		// TODO
+    	return _name + "(" + _x + ", " + _y + ")";
 	}
 }
