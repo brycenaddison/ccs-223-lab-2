@@ -37,7 +37,8 @@ public class SegmentNode {
 
 		SegmentNode s = (SegmentNode) obj;
 
-		return (this._point1.equals(s._point1) && this._point2.equals(s._point2));
+		return ((this._point1.equals(s._point1) && this._point2.equals(s._point2))
+				|| (this._point1.equals(s._point2) && this._point2.equals(s._point1)));
 	}
 
 	@Override
