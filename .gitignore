@@ -26,3 +26,7 @@ replay_pid*
 # VScode
 /.vscode
 /bin/
+
+# Eclipse
+.classpath
+.DS_Store
