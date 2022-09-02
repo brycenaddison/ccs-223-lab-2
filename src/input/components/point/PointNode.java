@@ -1,5 +1,7 @@
 package input.components.point;
 
+import utilities.math.MathUtilities;
+
 /**
  * A 2D Point (x, y).
  * 
@@ -57,9 +59,9 @@ public class PointNode {
 		int result = 1;
 		result = prime * result + this.getName().hashCode();
 		long temp;
-		temp = Double.doubleToLongBits(this.getX());
+		temp = Double.doubleToLongBits(MathUtilities.removeLessEpsilon(this.getX()));
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(this.getY());
+		temp = Double.doubleToLongBits(MathUtilities.removeLessEpsilon(this.getY()));
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
