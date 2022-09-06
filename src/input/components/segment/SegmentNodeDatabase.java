@@ -10,11 +10,17 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
 
+/**
+ * Stores line segments as an adjacency list.
+ * 
+ * @author brycenaddison
+ * @date Wed Aug 31 2022
+ */
 public class SegmentNodeDatabase {
     protected Map<PointNode, Set<PointNode>> _adjLists;
 
     public SegmentNodeDatabase() {
-        this._adjLists = new HashMap<PointNode, Set<PointNode>>();
+        this._adjLists = new HashMap<>();
     }
 
     public SegmentNodeDatabase(Map<PointNode, Set<PointNode>> adjLists) {
@@ -30,11 +36,7 @@ public class SegmentNodeDatabase {
     }
 
     private void addDirectedEdge(PointNode a, PointNode b) {
-        Set<PointNode> adjList = this._adjLists.get(a);
-        if (adjList == null) {
-            adjList = new HashSet<PointNode>();
-            this._adjLists.put(a, adjList);
-        }
+        Set<PointNode> adjList = this._adjLists.computeIfAbsent(a, k -> new HashSet<>());
         adjList.add(b);
     }
 
@@ -50,7 +52,7 @@ public class SegmentNodeDatabase {
     }
 
     public List<SegmentNode> asSegmentList() {
-        ArrayList<SegmentNode> list = new ArrayList<SegmentNode>();
+        ArrayList<SegmentNode> list = new ArrayList<>();
         for (Entry<PointNode, Set<PointNode>> entry : this._adjLists.entrySet()) {
             PointNode a = entry.getKey();
             for (PointNode b : entry.getValue()) {
@@ -62,7 +64,7 @@ public class SegmentNodeDatabase {
     }
 
     public List<SegmentNode> asUniqueSegmentList() {
-        Set<SegmentNode> set = new HashSet<SegmentNode>(this.asSegmentList());
-        return new ArrayList<SegmentNode>(set);
+        Set<SegmentNode> set = new HashSet<>(this.asSegmentList());
+        return new ArrayList<>(set);
     }
 }
