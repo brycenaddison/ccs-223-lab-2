@@ -20,6 +20,12 @@ public class SegmentNode {
 		return _point2;
 	}
 
+	/**
+	 * Create a new SegmentNode with the specified point nodes.
+	 * 
+	 * @param pt1 -- The point 1 coordinate
+	 * @param pt2 -- The point 2 coordinate
+	 */
 	public SegmentNode(PointNode pt1, PointNode pt2) {
 		_point1 = pt1;
 		_point2 = pt2;

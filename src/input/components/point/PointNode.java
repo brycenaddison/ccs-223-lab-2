@@ -10,22 +10,21 @@ import utilities.math.MathUtilities;
  */
 
 public class PointNode {
+	
 	protected static final String ANONYMOUS = "__UNNAMED";
 
 	protected double _x;
+	protected double _y;
+	protected String _name;
 
 	public double getX() {
 		return this._x;
 	}
-
-	protected double _y;
-
+	
 	public double getY() {
 		return this._y;
 	}
-
-	protected String _name;
-
+	
 	public String getName() {
 		return _name;
 	}
@@ -39,6 +38,7 @@ public class PointNode {
 	public PointNode(double x, double y) {
 		this(ANONYMOUS, x, y);
 	}
+	
 
 	/**
 	 * Create a new Point with the specified coordinates.
@@ -67,9 +67,11 @@ public class PointNode {
 
 	@Override
 	public boolean equals(Object obj) {
+		//check if obj is null or of different class
 		if (obj == null || obj.getClass() != this.getClass()) return false;
 		
 		PointNode objAsPointNode = (PointNode) obj;
+		//check obj address and coordinates
 		if (this == obj || (this.getX() == objAsPointNode.getX() && 
 							this.getY() == objAsPointNode.getY())) return true;
 		return false;
