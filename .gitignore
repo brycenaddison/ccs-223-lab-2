@@ -30,3 +30,7 @@ replay_pid*
 # Eclipse
 .classpath
 .DS_Store
+
+# IDEA
+/.idea/
+*.iml
