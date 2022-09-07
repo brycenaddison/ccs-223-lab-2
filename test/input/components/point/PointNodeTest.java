@@ -56,12 +56,6 @@ class PointNodeTest {
 	}
 	
 	@Test
-	void testHashCode() {
-		
-		
-	}
-	
-	@Test
 	void testEquals() {
 		PointNode node = new PointNode(0,0);
 		assertTrue(node.equals(node));
@@ -76,8 +70,6 @@ class PointNodeTest {
 		PointNode negNode = new PointNode(-2, -1);
 		assertFalse(node.equals(negNode));
 		assertFalse(posNode.equals(negNode));
-		//System.out.println(posNode.hashCode());
-		//System.out.println(negNode.hashCode());
 	
 		PointNode negNodeCopy = new PointNode("Copy", -2, -1);
 		assertTrue(negNode.equals(negNodeCopy));
@@ -103,9 +95,6 @@ class PointNodeTest {
 		
 		PointNode negNode = new PointNode(-2, -5);
 		assertEquals("__UNNAMED(-2.0, -5.0)", negNode.toString());
-
 	}
-	
-	
 
 }
