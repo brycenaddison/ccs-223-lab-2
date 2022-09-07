@@ -68,13 +68,13 @@ public class PointNode {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		return this.hashCode() == obj.hashCode();
+		if (obj == null || obj.getClass() != this.getClass()) return false;
+		
+		PointNode objAsPointNode = (PointNode) obj;
+		if (this == obj || (this.getX() == objAsPointNode.getX() && 
+							this.getY() == objAsPointNode.getY())) return true;
+		return false;
+
 	}
 
 	@Override
