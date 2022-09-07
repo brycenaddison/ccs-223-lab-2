@@ -8,6 +8,7 @@ class PointNodeTest {
 
 	@Test
 	void testPointNode() {
+		//create node and check points and name
 		PointNode node = new PointNode(0,0);
 		assertEquals(0.0, node._x);
 		assertEquals(0.0, node._y);
@@ -21,6 +22,7 @@ class PointNodeTest {
 	
 	@Test
 	void testGetX() {
+		//create node and check getX is correct
 		PointNode node = new PointNode(0,0);
 		assertEquals(0.0, node.getX());
 		
@@ -33,6 +35,7 @@ class PointNodeTest {
 	
 	@Test
 	void testGetY() {
+		//create node and check getY is correct
 		PointNode node = new PointNode(0,0);
 		assertEquals(0.0, node.getY());
 		
@@ -45,6 +48,7 @@ class PointNodeTest {
 	
 	@Test
 	void testGetName() {
+		//create node and check getName is correct
 		PointNode unnamedNode = new PointNode(0,0);
 		assertEquals("__UNNAMED", unnamedNode.getName());
 		
@@ -57,6 +61,7 @@ class PointNodeTest {
 	
 	@Test
 	void testEquals() {
+		//create node and compare against other objects using equals method
 		PointNode node = new PointNode(0,0);
 		assertTrue(node.equals(node));
 		assertFalse(node.equals(null));
@@ -79,7 +84,6 @@ class PointNodeTest {
 		
 		PointNode nullNode = null;
 		assertFalse(node.equals(nullNode));
-		
 	}
 	
 	@Test
