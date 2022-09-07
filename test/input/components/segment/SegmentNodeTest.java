@@ -10,6 +10,7 @@ class SegmentNodeTest {
 	
 	@Test
 	void testSegmentNode() {
+		//create segment node and check node values
 		PointNode pt1 = new PointNode(1,1);
 		PointNode pt2 = new PointNode(-1,-1);
 		SegmentNode node = new SegmentNode(pt1, pt2);
@@ -19,6 +20,7 @@ class SegmentNodeTest {
 
 	@Test
 	void testGetPoint1() {
+		//create segment node and check get point1 is correct
 		PointNode pt1 = new PointNode(1,1);
 		PointNode pt2 = new PointNode(-1,-1);
 		SegmentNode node = new SegmentNode(pt1, pt2);
@@ -30,6 +32,7 @@ class SegmentNodeTest {
 	
 	@Test
 	void testGetPoint2() {
+		//create segment node and check get point2 is correct
 		PointNode pt1 = new PointNode(1,1);
 		PointNode pt2 = new PointNode(-1,-1);
 		SegmentNode node = new SegmentNode(pt1, pt2);
@@ -41,6 +44,7 @@ class SegmentNodeTest {
 	
 	@Test
 	void testEquals() {
+		//create segment node and compare to other objects using equals method
 		PointNode pt1 = new PointNode(1,1);
 		PointNode pt2 = new PointNode(-1,-1);
 		SegmentNode node = new SegmentNode(pt1, pt2);
@@ -49,8 +53,17 @@ class SegmentNodeTest {
 		SegmentNode nodeCopy = new SegmentNode(pt1,pt2);
 		assertTrue(node.equals(nodeCopy));
 		
-		SegmentNode difNode = new SegmentNode(null,null);
+		SegmentNode nodeFlipped = new SegmentNode(pt2,pt1);
+		assertTrue(node.equals(nodeFlipped));
+		
+		SegmentNode difNode = new SegmentNode(pt1,null);
 		assertFalse(node.equals(difNode));
+		
+		SegmentNode nullNode = new SegmentNode(null,null);
+		assertFalse(node.equals(nullNode));
+		
+		String notNode = "not a segment node";
+		assertFalse(node.equals(notNode));
 	}
 	
 	@Test
