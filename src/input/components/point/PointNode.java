@@ -65,6 +65,11 @@ public class PointNode {
 		return result;
 	}
 
+	/**
+	 * Compare this with a given object for equality; returns true
+	 * if they are equal, false otherwise.
+	 * @param obj
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		//check if obj is null or of different class
@@ -78,6 +83,9 @@ public class PointNode {
 
 	}
 
+	/**
+	 * Turns this point node into a string and returns it.
+	 */
 	@Override
 	public String toString() {
 		return this.getName() + "(" + this.getX() + ", " + this.getY() + ")";

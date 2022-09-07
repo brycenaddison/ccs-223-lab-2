@@ -31,6 +31,11 @@ public class SegmentNode {
 		_point2 = pt2;
 	}
 
+	/**
+	 * Compare this with a given object for equality; returns true
+	 * if they are equal, false otherwise.
+	 * @param obj
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -55,6 +60,9 @@ public class SegmentNode {
 		return hash;
 	}
 
+	/**
+	 * Turns this segment node into a string and returns it.
+	 */
 	@Override
 	public String toString() {
 		return String.format("<%s, %s>", this._point1.toString(), this._point2.toString());
