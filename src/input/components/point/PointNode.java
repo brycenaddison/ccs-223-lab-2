@@ -73,14 +73,15 @@ public class PointNode {
 	@Override
 	public boolean equals(Object obj) {
 		//check if obj is null or of different class
-		if (obj == null || obj.getClass() != this.getClass()) return false;
+		if (obj == null) return false;
+		if (obj.getClass() != this.getClass()) return false;
 		
 		PointNode objAsPointNode = (PointNode) obj;
 		//check obj address and coordinates
-		if (this == obj || (this.getX() == objAsPointNode.getX() && 
-							this.getY() == objAsPointNode.getY())) return true;
+		if (this == obj) return true; 
+		if (MathUtilities.doubleEquals(this.getX(),objAsPointNode.getX()) && 
+			MathUtilities.doubleEquals(this.getY(),objAsPointNode.getY())) return true;
 		return false;
-
 	}
 
 	/**
