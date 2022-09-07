@@ -4,6 +4,8 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
+import utilities.math.MathUtilities;
+
 /**
  * Stores Point Nodes in LinkedHashSet
  * @author georgelamb
@@ -89,7 +91,7 @@ public class PointNodeDatabase {
 	 */
 	public PointNode getPoint(double x, double y) {
 		for (PointNode p: this._points) {
-			if (p.getX() == x && p.getY() == y) {
+			if (MathUtilities.doubleEquals(x,p.getX()) && MathUtilities.doubleEquals(y, p.getY())) {
 				return p;
 			}
 		}
